@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies (none currently, but just in case)
+node_modules/
+
+# Build output
+dist/
+
+# Dev/utility files
+raw_images/
+resize_images.py
+nul

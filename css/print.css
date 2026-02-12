@@ -1,0 +1,89 @@
+/* ============================================================
+   HALEPI RESTAURANT — PRINT STYLESHEET
+   ============================================================ */
+
+@media print {
+    /* Hide non-essential elements */
+    .nav,
+    .hero,
+    .photo-strip,
+    .reviews,
+    .find-us,
+    .print-banner,
+    .footer,
+    .btn,
+    .menu__tabs,
+    .skip-link,
+    .reviews__btn,
+    .reviews__dots {
+        display: none !important;
+    }
+
+    /* Reset backgrounds and colors for print */
+    body {
+        background: #fff;
+        color: #000;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Show all menu categories */
+    .menu__category-content {
+        display: block !important;
+    }
+
+    .menu__items {
+        grid-template-columns: 1fr 1fr;
+        gap: 8pt 24pt;
+    }
+
+    .menu-item {
+        page-break-inside: avoid;
+    }
+
+    .menu-item__price {
+        font-weight: bold;
+    }
+
+    .menu-item__dots {
+        border-bottom-color: #ccc;
+    }
+
+    /* Section heading for print */
+    .section-heading__decoration {
+        display: none;
+    }
+
+    .section-heading__title {
+        font-size: 16pt;
+        border-bottom: 1pt solid #000;
+        padding-bottom: 4pt;
+    }
+
+    /* Menu footer */
+    .menu__footer {
+        border-top: 1pt solid #000;
+        padding-top: 8pt;
+        margin-top: 16pt;
+    }
+
+    /* Page breaks */
+    .section {
+        page-break-before: auto;
+    }
+
+    /* Wine section */
+    .wines__category {
+        page-break-inside: avoid;
+        border: 1pt solid #ccc;
+        padding: 8pt;
+        margin-bottom: 8pt;
+    }
+}
