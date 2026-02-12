@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initWineSection();
     initReviewsCarousel();
     initScrollAnimations();
+    initMobileBar();
 });
 
 /* ---- NAVIGATION ---- */
@@ -323,6 +324,43 @@ function initReviewsCarousel() {
     }, { passive: true });
 
     startAutoPlay();
+}
+
+/* ---- MOBILE BAR ---- */
+function initMobileBar() {
+    const mobileBar = document.getElementById('mobile-bar');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (!mobileBar) return;
+
+    // Hide bar when mobile menu is open
+    const observer = new MutationObserver(() => {
+        if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+            mobileBar.style.display = 'none';
+        } else {
+            mobileBar.style.display = '';
+        }
+    });
+
+    if (mobileMenu) {
+        observer.observe(mobileMenu, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    // Show/hide bar based on scroll position (hide at very top where hero CTAs are visible)
+    let barVisible = false;
+    window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+        if (scrollY > window.innerHeight * 0.6) {
+            if (!barVisible) {
+                mobileBar.classList.add('mobile-bar--visible');
+                barVisible = true;
+            }
+        } else {
+            if (barVisible) {
+                mobileBar.classList.remove('mobile-bar--visible');
+                barVisible = false;
+            }
+        }
+    }, { passive: true });
 }
 
 /* ---- SCROLL ANIMATIONS ---- */
