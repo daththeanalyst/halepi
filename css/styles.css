@@ -1245,6 +1245,21 @@ h4 { font-size: 1.2rem; }
     margin: var(--space-lg) 0;
 }
 
+.find-us__private-hire {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-dark-brown);
+    color: var(--color-gold);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: var(--space-lg);
+}
+
 .find-us__exterior {
     border-radius: var(--border-radius-lg);
     overflow: hidden;
