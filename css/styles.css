@@ -498,7 +498,7 @@ h4 { font-size: 1.2rem; }
     inset: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 3px;
     padding: 3px;
     background: rgba(201, 168, 76, 0.3);
