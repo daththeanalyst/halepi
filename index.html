@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,6 +50,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: left center !important;
         display: block;
         position: absolute;
         inset: 0;
@@ -192,6 +194,50 @@
         main {
             padding-bottom: 4.5rem;
         }
+    }
+
+    /* ===== WINES — collapsed by default ===== */
+    .wines__grid {
+        max-height: 480px !important;
+        overflow: hidden !important;
+        position: relative !important;
+        transition: max-height 0.5s ease;
+    }
+
+    .wines__grid.wines__grid--expanded {
+        max-height: 9999px !important;
+    }
+
+    .wines__grid:not(.wines__grid--expanded)::after {
+        content: '' !important;
+        display: block !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 120px !important;
+        background: linear-gradient(to bottom, rgba(26, 20, 16, 0), rgba(26, 20, 16, 1)) !important;
+        pointer-events: none !important;
+        z-index: 10 !important;
+    }
+
+    .wines__toggle {
+        display: block;
+        margin: 1.5rem auto 0;
+        background: none;
+        border: 1px solid rgba(197, 165, 90, 0.4);
+        color: #C5A55A;
+        padding: 0.6rem 2rem;
+        font-family: 'Lato', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+        border-radius: 4px;
+    }
+
+    .wines__toggle:hover {
+        background: rgba(197, 165, 90, 0.15);
     }
 
     /* Tablet tweaks */
@@ -410,6 +456,7 @@
             </div>
 
             <div class="wines__grid" id="wines-grid"></div>
+            <button class="wines__toggle" id="wines-toggle" onclick="toggleWines()">Show Full Wine List</button>
             <p class="wines__note reveal">Our servers are happy to help you find the perfect pairing</p>
         </div>
     </section>
@@ -627,6 +674,14 @@
 <!-- Scripts -->
 <script src="js/menu-data.js"></script>
 <script src="js/app.js"></script>
+<script>
+    function toggleWines() {
+        var grid = document.getElementById('wines-grid');
+        var btn = document.getElementById('wines-toggle');
+        grid.classList.toggle('wines__grid--expanded');
+        btn.textContent = grid.classList.contains('wines__grid--expanded') ? 'Show Less' : 'Show Full Wine List';
+    }
+</script>
 ```
 
 </body>
