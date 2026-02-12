@@ -518,7 +518,7 @@ h4 { font-size: 1.2rem; }
     position: relative;
     z-index: 2;
     padding: var(--space-3xl) var(--space-xl);
-    padding-bottom: 12vh;
+    padding-bottom: 6vh;
     max-width: 800px;
 }
 
@@ -541,6 +541,9 @@ h4 { font-size: 1.2rem; }
         0 2px 4px rgba(0, 0, 0, 0.5),
         0 4px 24px rgba(0, 0, 0, 0.35),
         0 0 40px rgba(201, 168, 76, 0.2);
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    background: linear-gradient(to bottom, transparent 55%, rgba(201, 168, 76, 0.18) 55%, rgba(201, 168, 76, 0.18) 90%, transparent 90%);
 }
 
 .hero__subtitle {
@@ -1626,7 +1629,7 @@ h4 { font-size: 1.2rem; }
     }
     .hero__content {
         padding: var(--space-2xl) var(--space-lg);
-        padding-bottom: 10vh;
+        padding-bottom: 5vh;
     }
 
     /* About */
@@ -1757,7 +1760,7 @@ h4 { font-size: 1.2rem; }
     .hero__tagline { font-size: 1rem; }
     .hero__content {
         padding: var(--space-xl) var(--space-md);
-        padding-bottom: 8vh;
+        padding-bottom: 4vh;
     }
     .btn {
         padding: 12px 24px;
@@ -1824,7 +1827,7 @@ h4 { font-size: 1.2rem; }
     .hero__tagline { font-size: 0.95rem; }
     .hero__content {
         padding: var(--space-lg) var(--space-xl);
-        padding-bottom: 6vh;
+        padding-bottom: 3vh;
     }
     .hero__cta-group {
         flex-direction: row;
