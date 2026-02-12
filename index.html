@@ -1,4 +1,5 @@
-<! DOCTYPE  html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,365 +11,518 @@
     <meta name="description" content="Halepi Restaurant and Kebab House - Family-run Greek Cypriot taverna in London since 1966. Award-winning authentic cuisine, charcoal grills and traditional dishes. 18 Leinster Terrace, W2 3ET.">
     <meta name="keywords" content="Greek restaurant London, Halepi, kebab house, Cypriot food, Bayswater, Leinster Terrace, kleftiko, souvlaki, mousaka">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Halepi Restaurant &amp; Kebab House">
-    <meta property="og:description" content="Authentic Greek Cypriot Cuisine Since 1966 — London W2">
-    <meta property="og:type" content="restaurant.restaurant">
-    <meta property="og:locale" content="en_GB">
+```
+<!-- Open Graph -->
+<meta property="og:title" content="Halepi Restaurant &amp; Kebab House">
+<meta property="og:description" content="Authentic Greek Cypriot Cuisine Since 1966 — London W2">
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:locale" content="en_GB">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/print.css" media="print">
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/print.css" media="print">
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Halepi Restaurant and Kebab House",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "18 Leinster Terrace",
-            "addressLocality": "London",
-            "postalCode": "W2 3ET",
-            "addressCountry": "GB"
-        },
-        "telephone": "+442072621070",
-        "servesCuisine": "Greek",
-        "priceRange": "££",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "12:00",
-            "closes": "00:15"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.3",
-            "reviewCount": "3566"
-        },
-        "foundingDate": "1966",
-        "hasMenu": "#menus"
+<!-- Mobile-friendly overrides -->
+<style>
+    /* ===== HERO — single full-width background image ===== */
+    .hero {
+        position: relative;
+        overflow: hidden;
     }
-    </script>
+
+    .hero__collage {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .hero__collage-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* ===== GLOBAL MOBILE FRIENDLINESS ===== */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 767px) {
+        /* Container padding */
+        .container {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+
+        .section {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .section-heading__title {
+            font-size: 1.75rem;
+        }
+
+        /* Hero mobile */
+        .hero__title {
+            font-size: 2.5rem;
+        }
+        .hero__tagline {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .hero__tagline br {
+            display: none;
+        }
+        .hero__cta-group {
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+        }
+        .hero__cta-group .btn {
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* About section mobile — stack text above images */
+        .about__grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+        }
+        .about__text p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .about__highlights {
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .about__image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        .about__image--secondary {
+            margin-top: 1rem;
+        }
+
+        /* Photo strip mobile — 2 columns */
+        .photo-strip__grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 0.25rem !important;
+        }
+
+        /* Menu tabs — horizontal scroll */
+        .menu__tabs {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            flex-wrap: nowrap !important;
+            gap: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Menu footer */
+        .menu__footer {
+            text-align: center;
+        }
+
+        /* Find us — single column */
+        .find-us__grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+        }
+        .find-us__map iframe {
+            height: 280px;
+        }
+        .find-us__exterior img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        /* Reviews — hide prev/next arrows on mobile, rely on swipe/dots */
+        .reviews__btn {
+            display: none;
+        }
+        .reviews__track-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+
+        /* Print banner */
+        .print-banner__buttons {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        /* Footer — single column */
+        .footer__grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+            text-align: center;
+        }
+        .footer__social {
+            justify-content: center;
+        }
+
+        /* Bottom safe area for sticky mobile bar */
+        main {
+            padding-bottom: 4.5rem;
+        }
+    }
+
+    /* Tablet tweaks */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .about__grid {
+            gap: 2rem;
+        }
+        .find-us__grid {
+            gap: 2rem;
+        }
+    }
+</style>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Halepi Restaurant and Kebab House",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "18 Leinster Terrace",
+        "addressLocality": "London",
+        "postalCode": "W2 3ET",
+        "addressCountry": "GB"
+    },
+    "telephone": "+442072621070",
+    "servesCuisine": "Greek",
+    "priceRange": "££",
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "12:00",
+        "closes": "00:15"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.3",
+        "reviewCount": "3566"
+    },
+    "foundingDate": "1966",
+    "hasMenu": "#menus"
+}
+</script>
+```
+
 </head>
 <body>
     <!-- Skip Link -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav__inner">
-            <a href="#home" class="nav__brand">
-                <span class="nav__brand-name">Halepi</span>
-            </a>
+```
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+        <a href="#home" class="nav__brand">
+            <span class="nav__brand-name">Halepi</span>
+        </a>
 
-            <ul class="nav__links">
-                <li><a href="#home" class="nav__link nav__link--active">Home</a></li>
-                <li><a href="#about" class="nav__link">About</a></li>
-                <li><a href="#menus" class="nav__link">Menus</a></li>
-                <li><a href="#wines" class="nav__link">Wines</a></li>
-                <li><a href="#reviews" class="nav__link">Reviews</a></li>
-                <li><a href="#find-us" class="nav__link">Find Us</a></li>
-            </ul>
+        <ul class="nav__links">
+            <li><a href="#home" class="nav__link nav__link--active">Home</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#menus" class="nav__link">Menus</a></li>
+            <li><a href="#wines" class="nav__link">Wines</a></li>
+            <li><a href="#reviews" class="nav__link">Reviews</a></li>
+            <li><a href="#find-us" class="nav__link">Find Us</a></li>
+        </ul>
 
-            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav__mobile-overlay" id="mobile-menu">
+        <ul class="nav__mobile-links">
+            <li><a href="#home" class="nav__mobile-link">Home</a></li>
+            <li><a href="#about" class="nav__mobile-link">About</a></li>
+            <li><a href="#menus" class="nav__mobile-link">Menus</a></li>
+            <li><a href="#wines" class="nav__mobile-link">Wines</a></li>
+            <li><a href="#reviews" class="nav__mobile-link">Reviews</a></li>
+            <li><a href="#find-us" class="nav__mobile-link">Find Us</a></li>
+        </ul>
+        <a href="tel:+442072621070" class="nav__mobile-phone">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            020 7262 1070
+        </a>
+    </div>
+</nav>
+
+<main id="main">
+
+    <!-- ==================== HERO ==================== -->
+    <!-- Single background image instead of two-image collage -->
+    <section class="hero" id="home">
+        <div class="hero__collage">
+            <img src="assets/images/exterior-night.jpg" alt="Halepi exterior at night" class="hero__collage-img">
         </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="nav__mobile-overlay" id="mobile-menu">
-            <ul class="nav__mobile-links">
-                <li><a href="#home" class="nav__mobile-link">Home</a></li>
-                <li><a href="#about" class="nav__mobile-link">About</a></li>
-                <li><a href="#menus" class="nav__mobile-link">Menus</a></li>
-                <li><a href="#wines" class="nav__mobile-link">Wines</a></li>
-                <li><a href="#reviews" class="nav__mobile-link">Reviews</a></li>
-                <li><a href="#find-us" class="nav__mobile-link">Find Us</a></li>
-            </ul>
-            <a href="tel:+442072621070" class="nav__mobile-phone">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                020 7262 1070
-            </a>
+        <div class="hero__content">
+            <p class="hero__welcome">Kalos Irthate</p>
+
+            <h1 class="hero__title">Halepi</h1>
+            <p class="hero__subtitle">Restaurant &amp; Kebab House</p>
+
+            <div class="hero__divider">
+                <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="10" x2="48" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                    <circle cx="60" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="72" y1="10" x2="120" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                </svg>
+            </div>
+
+            <p class="hero__tagline">A Greek &amp; Cypriot family taverna bringing<br>the warmth of the Mediterranean to London since 1966</p>
+
+            <div class="hero__cta-group">
+                <a href="#menus" class="btn btn--primary">See Our Menu</a>
+                <a href="https://www.quandoo.co.uk/place/halepi-43115/menu" target="_blank" rel="noopener noreferrer" class="btn btn--ghost hero__call-btn">
+                    Reserve a Table
+                </a>
+            </div>
         </div>
-    </nav>
+    </section>
 
-    <main id="main">
-
-        <!-- ==================== HERO ==================== -->
-        <section class="hero" id="home">
-            <div class="hero__collage">
-                <img src="assets/images/exterior-night.jpg" alt="Halepi exterior at night" class="hero__collage-img">
-                <img src="assets/images/meze-spread.jpg" alt="Traditional Greek meze spread" class="hero__collage-img">
+    <!-- ==================== ABOUT ==================== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="section-heading__label">Our Story</span>
+                <h2 class="section-heading__title">The Kazolides Family</h2>
+                <div class="section-heading__decoration"></div>
             </div>
 
-            <div class="hero__content">
-                <p class="hero__welcome">Kalos Irthate</p>
+            <div class="about__grid">
+                <div class="about__text reveal reveal--left">
+                    <p>Since 1966, the Kazolides family has welcomed guests to Halepi, their authentic Greek &amp; Cypriot taverna bringing the warmth and flavours of the Mediterranean to the heart of London. What began as a humble family restaurant has blossomed into one of the capital's most beloved Greek Cypriot dining experiences, earning recognition from diners around the world.</p>
+                    <p>Steve and Kostas Kazolides have carried on the family tradition since 1984, maintaining the same commitment to authentic, home-cooked recipes passed down through generations. Every dish tells a story of our Mediterranean heritage — from slow-roasted kleftiko to crispy calamari, each plate is prepared with love and the finest ingredients.</p>
+                    <p>Recognised by the Automobile Association of America Guide as one of the finest Greek restaurants in the world, Halepi remains a place where friends become family, and every meal is a celebration.</p>
 
-                <h1 class="hero__title">Halepi</h1>
-                <p class="hero__subtitle">Restaurant &amp; Kebab House</p>
-
-                <div class="hero__divider">
-                    <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0" y1="10" x2="48" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-                        <circle cx="60" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-                        <line x1="72" y1="10" x2="120" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-                    </svg>
+                    <div class="about__highlights">
+                        <div class="about__highlight">
+                            <span class="about__highlight-value">Est. 1966</span>
+                            <span class="about__highlight-label">Founded</span>
+                        </div>
+                        <div class="about__highlight">
+                            <span class="about__highlight-value">Family Run</span>
+                            <span class="about__highlight-label">Three Generations</span>
+                        </div>
+                        <div class="about__highlight">
+                            <span class="about__highlight-value">Award Winning</span>
+                            <span class="about__highlight-label">AAA Recognised</span>
+                        </div>
+                    </div>
                 </div>
 
-                <p class="hero__tagline">A Greek &amp; Cypriot family taverna bringing<br>the warmth of the Mediterranean to London since 1966</p>
+                <div class="about__images reveal reveal--right">
+                    <div class="about__image">
+                        <img src="assets/images/family-portrait.png" alt="The Kazolides family at Halepi restaurant">
+                    </div>
+                    <div class="about__image about__image--secondary">
+                        <img src="assets/images/princess-diana-visit.png" alt="Princess Diana visiting Halepi restaurant">
+                        <span class="about__image-caption">A visit from Princess Diana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="hero__cta-group">
-                    <a href="#menus" class="btn btn--primary">See Our Menu</a>
-                    <a href="https://www.quandoo.co.uk/place/halepi-43115/menu" target="_blank" rel="noopener noreferrer" class="btn btn--ghost hero__call-btn">
-                        Reserve a Table
+    <!-- ==================== PHOTO STRIP ==================== -->
+    <section class="photo-strip">
+        <div class="photo-strip__grid">
+            <div class="photo-strip__item">
+                <img src="assets/images/table-setting.jpg" alt="Beautifully set table at Halepi with traditional striped tablecloth">
+            </div>
+            <div class="photo-strip__item">
+                <img src="assets/images/meze-spread.jpg" alt="Traditional Greek meze spread with tzatziki, halloumi, and fresh salad">
+            </div>
+            <div class="photo-strip__item">
+                <img src="assets/images/kleftiko.jpg" alt="Slow-roasted kleftiko lamb, a Halepi signature dish">
+            </div>
+            <div class="photo-strip__item">
+                <img src="assets/images/souvlaki-plate.jpg" alt="Grilled souvlaki with fresh herbs and lemon">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MENUS ==================== -->
+    <section class="menu-section section" id="menus">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="section-heading__label">From our kitchen</span>
+                <h2 class="section-heading__title">The Menu</h2>
+                <div class="section-heading__decoration"></div>
+            </div>
+
+            <div class="menu__tabs" id="menu-tabs" role="tablist" aria-label="Menu categories"></div>
+            <p class="menu__category-description" id="menu-category-desc"></p>
+            <div class="menu__items" id="menu-items"></div>
+
+            <div class="menu__footer">
+                <p class="menu__footer-text">Cover charge: &pound;1.00 per person. All prices inclusive of VAT. A discretionary 12.5% service charge will be added to your bill.</p>
+                <a href="ourmenus.pdf" download class="btn btn--secondary">Download Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WINES ==================== -->
+    <section class="wines section" id="wines">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="section-heading__label">The wine list</span>
+                <h2 class="section-heading__title">Wines &amp; Spirits</h2>
+                <div class="section-heading__decoration"></div>
+            </div>
+
+            <div class="wines__grid" id="wines-grid"></div>
+            <p class="wines__note reveal">Our servers are happy to help you find the perfect pairing</p>
+        </div>
+    </section>
+
+    <!-- ==================== REVIEWS ==================== -->
+    <section class="reviews section" id="reviews">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="section-heading__label">From our guestbook</span>
+                <h2 class="section-heading__title">Kind Words</h2>
+                <div class="section-heading__decoration"></div>
+            </div>
+
+            <div class="reviews__rating-summary reveal">
+                <div class="hero__rating-stars" style="justify-content: center; margin-bottom: 0.5rem;">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
+                    <svg viewBox="0 0 24 24" width="24" height="24" style="opacity:0.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
+                </div>
+                <span class="reviews__rating-number">4.3</span>
+                <p class="reviews__rating-count">Based on 3,566 Google Reviews</p>
+            </div>
+
+            <div class="reviews__carousel reveal" id="reviews-carousel">
+                <button class="reviews__btn reviews__btn--prev" aria-label="Previous review">&lsaquo;</button>
+                <div class="reviews__track-wrapper">
+                    <div class="reviews__track" id="reviews-track"></div>
+                </div>
+                <button class="reviews__btn reviews__btn--next" aria-label="Next review">&rsaquo;</button>
+                <div class="reviews__dots" id="reviews-dots"></div>
+            </div>
+
+            <div class="reviews__cta reveal">
+                <a href="https://www.google.com/maps/place/Halepi+Restaurant/" target="_blank" rel="noopener noreferrer">
+                    Read more on Google &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FIND US ==================== -->
+    <section class="find-us section" id="find-us">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="section-heading__label">Our door is always open</span>
+                <h2 class="section-heading__title">Find Us</h2>
+                <div class="section-heading__decoration"></div>
+            </div>
+
+            <div class="find-us__grid">
+                <div class="find-us__info reveal reveal--left">
+                    <div class="find-us__detail">
+                        <div class="find-us__detail-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="find-us__detail-text">
+                            <strong>Address</strong>
+                            18 Leinster Terrace<br>
+                            London W2 3ET
+                        </div>
+                    </div>
+
+                    <div class="find-us__detail">
+                        <div class="find-us__detail-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <div class="find-us__detail-text">
+                            <strong>Telephone</strong>
+                            <a href="tel:+442072621070">020 7262 1070</a>
+                        </div>
+                    </div>
+
+                    <div class="find-us__detail">
+                        <div class="find-us__detail-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                        </div>
+                        <div class="find-us__detail-text">
+                            <strong>Fax</strong>
+                            020 7262 2630
+                        </div>
+                    </div>
+
+                    <div class="find-us__detail">
+                        <div class="find-us__detail-icon">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        </div>
+                        <div class="find-us__detail-text">
+                            <strong>Opening Hours</strong>
+                            Open 7 days a week<br>
+                            12:00 pm &ndash; 12:15 am
+                        </div>
+                    </div>
+
+                    <div class="find-us__takeaway">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 6V4l-2-2H8L6 4v2H2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6h-4zM8 4h8v2H8V4z"/></svg>
+                        Takeaway Available
+                    </div>
+
+                    <div class="find-us__private-hire">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        Available for Private Hire &mdash; Business Functions &amp; Private Parties
+                    </div>
+
+                    <a href="https://www.google.com/maps/dir//18+Leinster+Terrace,+London+W2+3ET" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                        Get Directions
                     </a>
                 </div>
-            </div>
-        </section>
 
-        <!-- ==================== ABOUT ==================== -->
-        <section class="about section" id="about">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-heading__label">Our Story</span>
-                    <h2 class="section-heading__title">The Kazolides Family</h2>
-                    <div class="section-heading__decoration"></div>
-                </div>
-
-                <div class="about__grid">
-                    <div class="about__text reveal reveal--left">
-                        <p>Since 1966, the Kazolides family has welcomed guests to Halepi, their authentic Greek &amp; Cypriot taverna bringing the warmth and flavours of the Mediterranean to the heart of London. What began as a humble family restaurant has blossomed into one of the capital's most beloved Greek Cypriot dining experiences, earning recognition from diners around the world.</p>
-                        <p>Steve and Kostas Kazolides have carried on the family tradition since 1984, maintaining the same commitment to authentic, home-cooked recipes passed down through generations. Every dish tells a story of our Mediterranean heritage — from slow-roasted kleftiko to crispy calamari, each plate is prepared with love and the finest ingredients.</p>
-                        <p>Recognised by the Automobile Association of America Guide as one of the finest Greek restaurants in the world, Halepi remains a place where friends become family, and every meal is a celebration.</p>
-
-                        <div class="about__highlights">
-                            <div class="about__highlight">
-                                <span class="about__highlight-value">Est. 1966</span>
-                                <span class="about__highlight-label">Founded</span>
-                            </div>
-                            <div class="about__highlight">
-                                <span class="about__highlight-value">Family Run</span>
-                                <span class="about__highlight-label">Three Generations</span>
-                            </div>
-                            <div class="about__highlight">
-                                <span class="about__highlight-value">Award Winning</span>
-                                <span class="about__highlight-label">AAA Recognised</span>
-                            </div>
-                        </div>
+                <div class="find-us__visuals reveal reveal--right">
+                    <div class="find-us__exterior">
+                        <img src="assets/images/interior-dining.jpg" alt="Halepi restaurant dining room with warm wood paneling and traditional tablecloths">
                     </div>
 
-                    <div class="about__images reveal reveal--right">
-                        <div class="about__image">
-                            <img src="assets/images/family-portrait.png" alt="The Kazolides family at Halepi restaurant">
-                        </div>
-                        <div class="about__image about__image--secondary">
-                            <img src="assets/images/princess-diana-visit.png" alt="Princess Diana visiting Halepi restaurant">
-                            <span class="about__image-caption">A visit from Princess Diana</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== PHOTO STRIP ==================== -->
-        <!-- Replace placeholders with: <img src="assets/images/food-1.jpg" alt="Description"> -->
-        <section class="photo-strip">
-            <div class="photo-strip__grid">
-                <div class="photo-strip__item">
-                    <img src="assets/images/table-setting.jpg" alt="Beautifully set table at Halepi with traditional striped tablecloth">
-                </div>
-                <div class="photo-strip__item">
-                    <img src="assets/images/meze-spread.jpg" alt="Traditional Greek meze spread with tzatziki, halloumi, and fresh salad">
-                </div>
-                <div class="photo-strip__item">
-                    <img src="assets/images/kleftiko.jpg" alt="Slow-roasted kleftiko lamb, a Halepi signature dish">
-                </div>
-                <div class="photo-strip__item">
-                    <img src="assets/images/souvlaki-plate.jpg" alt="Grilled souvlaki with fresh herbs and lemon">
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== MENUS ==================== -->
-        <section class="menu-section section" id="menus">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-heading__label">From our kitchen</span>
-                    <h2 class="section-heading__title">The Menu</h2>
-                    <div class="section-heading__decoration"></div>
-                </div>
-
-                <!-- Tabs (rendered by JS) -->
-                <div class="menu__tabs" id="menu-tabs" role="tablist" aria-label="Menu categories">
-                    <!-- Tabs injected by app.js -->
-                </div>
-
-                <!-- Category Description -->
-                <p class="menu__category-description" id="menu-category-desc"></p>
-
-                <!-- Menu Items Grid (rendered by JS) -->
-                <div class="menu__items" id="menu-items">
-                    <!-- Items injected by app.js -->
-                </div>
-
-                <!-- Menu Footer -->
-                <div class="menu__footer">
-                    <p class="menu__footer-text">Cover charge: &pound;1.00 per person. All prices inclusive of VAT. A discretionary 12.5% service charge will be added to your bill.</p>
-                    <a href="ourmenus.pdf" download class="btn btn--secondary">Download Full Menu</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== WINES ==================== -->
-        <section class="wines section" id="wines">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-heading__label">The wine list</span>
-                    <h2 class="section-heading__title">Wines &amp; Spirits</h2>
-                    <div class="section-heading__decoration"></div>
-                </div>
-
-                <!-- Wine Grid (rendered by JS) -->
-                <div class="wines__grid" id="wines-grid">
-                    <!-- Wine cards injected by app.js -->
-                </div>
-
-                <p class="wines__note reveal">Our servers are happy to help you find the perfect pairing</p>
-            </div>
-        </section>
-
-        <!-- ==================== REVIEWS ==================== -->
-        <section class="reviews section" id="reviews">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-heading__label">From our guestbook</span>
-                    <h2 class="section-heading__title">Kind Words</h2>
-                    <div class="section-heading__decoration"></div>
-                </div>
-
-                <div class="reviews__rating-summary reveal">
-                    <div class="hero__rating-stars" style="justify-content: center; margin-bottom: 0.5rem;">
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
-                        <svg viewBox="0 0 24 24" width="24" height="24" style="opacity:0.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#C5A55A"/></svg>
-                    </div>
-                    <span class="reviews__rating-number">4.3</span>
-                    <p class="reviews__rating-count">Based on 3,566 Google Reviews</p>
-                </div>
-
-                <!-- Carousel -->
-                <div class="reviews__carousel reveal" id="reviews-carousel">
-                    <button class="reviews__btn reviews__btn--prev" aria-label="Previous review">&lsaquo;</button>
-
-                    <div class="reviews__track-wrapper">
-                        <div class="reviews__track" id="reviews-track">
-                            <!-- Review cards injected by app.js -->
-                        </div>
-                    </div>
-
-                    <button class="reviews__btn reviews__btn--next" aria-label="Next review">&rsaquo;</button>
-
-                    <div class="reviews__dots" id="reviews-dots">
-                        <!-- Dots injected by app.js -->
-                    </div>
-                </div>
-
-                <div class="reviews__cta reveal">
-                    <a href="https://www.google.com/maps/place/Halepi+Restaurant/" target="_blank" rel="noopener noreferrer">
-                        Read more on Google &rarr;
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== FIND US ==================== -->
-        <section class="find-us section" id="find-us">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-heading__label">Our door is always open</span>
-                    <h2 class="section-heading__title">Find Us</h2>
-                    <div class="section-heading__decoration"></div>
-                </div>
-
-                <div class="find-us__grid">
-                    <div class="find-us__info reveal reveal--left">
-                        <div class="find-us__detail">
-                            <div class="find-us__detail-icon">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            </div>
-                            <div class="find-us__detail-text">
-                                <strong>Address</strong>
-                                18 Leinster Terrace<br>
-                                London W2 3ET
-                            </div>
-                        </div>
-
-                        <div class="find-us__detail">
-                            <div class="find-us__detail-icon">
-                                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                            </div>
-                            <div class="find-us__detail-text">
-                                <strong>Telephone</strong>
-                                <a href="tel:+442072621070">020 7262 1070</a>
-                            </div>
-                        </div>
-
-                        <div class="find-us__detail">
-                            <div class="find-us__detail-icon">
-                                <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-                            </div>
-                            <div class="find-us__detail-text">
-                                <strong>Fax</strong>
-                                020 7262 2630
-                            </div>
-                        </div>
-
-                        <div class="find-us__detail">
-                            <div class="find-us__detail-icon">
-                                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                            </div>
-                            <div class="find-us__detail-text">
-                                <strong>Opening Hours</strong>
-                                Open 7 days a week<br>
-                                12:00 pm &ndash; 12:15 am
-                            </div>
-                        </div>
-
-                        <div class="find-us__takeaway">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 6V4l-2-2H8L6 4v2H2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6h-4zM8 4h8v2H8V4z"/></svg>
-                            Takeaway Available
-                        </div>
-
-                        <div class="find-us__private-hire">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                            Available for Private Hire &mdash; Business Functions &amp; Private Parties
-                        </div>
-
-                        <a href="https://www.google.com/maps/dir//18+Leinster+Terrace,+London+W2+3ET" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                            Get Directions
-                        </a>
-                    </div>
-
-                    <div class="find-us__visuals reveal reveal--right">
-                        <div class="find-us__exterior">
-                            <img src="assets/images/interior-dining.jpg" alt="Halepi restaurant dining room with warm wood paneling and traditional tablecloths">
-                        </div>
-
-                        <div class="find-us__map">
+                    <div class="find-us__map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.068!2d-0.1847!3d51.5125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ab0ad98f487%3A0x8c25d2c30d6a5e6d!2sHalepi%20Restaurant!5e0!3m2!1sen!2suk!4v1707000000000"
                             width="100%"
@@ -379,102 +533,98 @@
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Halepi Restaurant location on Google Maps">
                         </iframe>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- ==================== PRINT MENU BANNER ==================== -->
-        <section class="print-banner" id="print-menu">
-            <h2 class="print-banner__title">Take the Menu Home</h2>
-            <p class="print-banner__text">Browse our dishes at your leisure, then come join us</p>
-            <div class="print-banner__buttons">
-                <a href="ourmenus.pdf" download class="btn btn--ghost">Download Menu PDF</a>
-                <button class="btn btn--ghost" onclick="window.print()">Print This Page</button>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="footer">
-        <div class="footer__border"></div>
-        <div class="container">
-            <div class="footer__grid">
-                <!-- Brand -->
-                <div class="footer__brand">
-                    <h3 class="footer__brand-name">Halepi</h3>
-                    <p class="footer__brand-tagline">Authentic Greek Cypriot Cuisine Since 1966</p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer__nav">
-                    <h4 class="footer__heading">Quick Links</h4>
-                    <ul class="footer__links">
-                        <li><a href="#home" class="footer__link">Home</a></li>
-                        <li><a href="#about" class="footer__link">About</a></li>
-                        <li><a href="#menus" class="footer__link">Menus</a></li>
-                        <li><a href="#wines" class="footer__link">Wines</a></li>
-                        <li><a href="#reviews" class="footer__link">Reviews</a></li>
-                        <li><a href="#find-us" class="footer__link">Find Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div class="footer__contact">
-                    <h4 class="footer__heading">Contact Us</h4>
-                    <div class="footer__contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        <span>18 Leinster Terrace, London W2 3ET</span>
-                    </div>
-                    <div class="footer__contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        <span><a href="tel:+442072621070" class="footer__link">020 7262 1070</a></span>
-                    </div>
-                    <div class="footer__contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-                        <span>Fax: 020 7262 2630</span>
-                    </div>
-
-                    <div class="footer__social">
-                        <!-- Facebook -->
-                        <a href="#" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <!-- Instagram -->
-                        <a href="#" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        <!-- TripAdvisor -->
-                        <a href="#" class="footer__social-link" aria-label="TripAdvisor" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24"><path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 004.04 10.43 5.976 5.976 0 004.003-1.533l2 2.32 2-2.32a5.976 5.976 0 004.003 1.533 5.997 5.997 0 004.04-10.43L24 6.648h-4.35a13.573 13.573 0 00-7.644-2.353zM6.003 17.213a3.997 3.997 0 110-7.994 3.997 3.997 0 010 7.994zm11.994 0a3.997 3.997 0 110-7.994 3.997 3.997 0 010 7.994zM6.003 11.219a2 2 0 100 4 2 2 0 000-4zm11.994 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <p class="footer__warmth">Where friends become family.</p>
-
-            <div class="footer__bottom">
-                <p>&copy; 2026 Halepi Restaurant and Kebab House. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Sticky Mobile Bar -->
-    <div class="mobile-bar" id="mobile-bar">
-        <a href="https://www.quandoo.co.uk/place/halepi-43115/menu" target="_blank" rel="noopener noreferrer" class="mobile-bar__btn mobile-bar__btn--call">
-            Reserve Online
-        </a>
-        <a href="tel:+442072621070" class="mobile-bar__btn mobile-bar__btn--directions">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Call Us
-        </a>
+    <!-- ==================== PRINT MENU BANNER ==================== -->
+    <section class="print-banner" id="print-menu">
+        <h2 class="print-banner__title">Take the Menu Home</h2>
+        <p class="print-banner__text">Browse our dishes at your leisure, then come join us</p>
+        <div class="print-banner__buttons">
+            <a href="ourmenus.pdf" download class="btn btn--ghost">Download Menu PDF</a>
+            <button class="btn btn--ghost" onclick="window.print()">Print This Page</button>
+        </div>
+    </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer" id="footer">
+    <div class="footer__border"></div>
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <h3 class="footer__brand-name">Halepi</h3>
+                <p class="footer__brand-tagline">Authentic Greek Cypriot Cuisine Since 1966</p>
+            </div>
+
+            <div class="footer__nav">
+                <h4 class="footer__heading">Quick Links</h4>
+                <ul class="footer__links">
+                    <li><a href="#home" class="footer__link">Home</a></li>
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#menus" class="footer__link">Menus</a></li>
+                    <li><a href="#wines" class="footer__link">Wines</a></li>
+                    <li><a href="#reviews" class="footer__link">Reviews</a></li>
+                    <li><a href="#find-us" class="footer__link">Find Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__contact">
+                <h4 class="footer__heading">Contact Us</h4>
+                <div class="footer__contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>18 Leinster Terrace, London W2 3ET</span>
+                </div>
+                <div class="footer__contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <span><a href="tel:+442072621070" class="footer__link">020 7262 1070</a></span>
+                </div>
+                <div class="footer__contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                    <span>Fax: 020 7262 2630</span>
+                </div>
+
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="TripAdvisor" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 004.04 10.43 5.976 5.976 0 004.003-1.533l2 2.32 2-2.32a5.976 5.976 0 004.003 1.533 5.997 5.997 0 004.04-10.43L24 6.648h-4.35a13.573 13.573 0 00-7.644-2.353zM6.003 17.213a3.997 3.997 0 110-7.994 3.997 3.997 0 010 7.994zm11.994 0a3.997 3.997 0 110-7.994 3.997 3.997 0 010 7.994zM6.003 11.219a2 2 0 100 4 2 2 0 000-4zm11.994 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer__warmth">Where friends become family.</p>
+
+        <div class="footer__bottom">
+            <p>&copy; 2026 Halepi Restaurant and Kebab House. All rights reserved.</p>
+        </div>
     </div>
+</footer>
 
-    <!-- Scripts -->
-    <script src="js/menu-data.js"></script>
-    <script src="js/app.js"></script>
+<!-- Sticky Mobile Bar -->
+<div class="mobile-bar" id="mobile-bar">
+    <a href="https://www.quandoo.co.uk/place/halepi-43115/menu" target="_blank" rel="noopener noreferrer" class="mobile-bar__btn mobile-bar__btn--call">
+        Reserve Online
+    </a>
+    <a href="tel:+442072621070" class="mobile-bar__btn mobile-bar__btn--directions">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Us
+    </a>
+</div>
+
+<!-- Scripts -->
+<script src="js/menu-data.js"></script>
+<script src="js/app.js"></script>
+```
+
 </body>
 </html>
