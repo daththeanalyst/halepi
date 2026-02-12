@@ -117,6 +117,9 @@ function renderMenuCategory(category, container, descContainer) {
     container.style.opacity = '0';
     container.style.transform = 'translateY(10px)';
 
+    const COLLAPSE_THRESHOLD = 8;
+    const isMobile = window.innerWidth <= 768;
+
     setTimeout(() => {
         // Update description
         if (descContainer) {
@@ -125,9 +128,30 @@ function renderMenuCategory(category, container, descContainer) {
 
         // Clear and render items
         container.innerHTML = '';
-        category.items.forEach(item => {
-            container.appendChild(createMenuItem(item));
+        const items = category.items;
+        const shouldCollapse = isMobile && items.length > COLLAPSE_THRESHOLD;
+
+        items.forEach((item, index) => {
+            const el = createMenuItem(item);
+            if (shouldCollapse && index >= COLLAPSE_THRESHOLD) {
+                el.classList.add('menu-item--hidden');
+            }
+            container.appendChild(el);
         });
+
+        // Add "Show all" button if collapsed
+        if (shouldCollapse) {
+            const toggle = document.createElement('button');
+            toggle.className = 'menu__show-more';
+            toggle.textContent = `Show all ${items.length} items`;
+            toggle.addEventListener('click', () => {
+                container.querySelectorAll('.menu-item--hidden').forEach(el => {
+                    el.classList.remove('menu-item--hidden');
+                });
+                toggle.remove();
+            });
+            container.appendChild(toggle);
+        }
 
         // Fade in
         container.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
