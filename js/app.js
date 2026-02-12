@@ -140,9 +140,14 @@ function createMenuItem(item) {
     const el = document.createElement('div');
     el.className = 'menu-item';
 
-    const priceDisplay = item.price !== null
-        ? MENU_DATA.currency + item.price.toFixed(2)
-        : 'Ask';
+    let priceDisplay;
+    if (item.price !== null && item.priceLarge) {
+        priceDisplay = MENU_DATA.currency + item.price.toFixed(2) + ' / ' + MENU_DATA.currency + item.priceLarge.toFixed(2);
+    } else if (item.price !== null) {
+        priceDisplay = MENU_DATA.currency + item.price.toFixed(2);
+    } else {
+        priceDisplay = 'Ask';
+    }
 
     let badges = '';
     if (item.dietary && item.dietary.length > 0) {
@@ -187,22 +192,20 @@ function initWineSection() {
         let itemsHtml = '';
         category.items.forEach(wine => {
             let pricesHtml = '';
-            if (wine.glass && wine.bottle) {
-                pricesHtml = `
-                    <div class="wines__item-prices">
-                        <div><span class="wines__item-price">\u00A3${wine.glass.toFixed(2)}</span> <span class="wines__item-price-label">glass</span></div>
-                        <div><span class="wines__item-price">\u00A3${wine.bottle.toFixed(2)}</span> <span class="wines__item-price-label">bottle</span></div>
-                    </div>`;
-            } else if (wine.bottle) {
-                pricesHtml = `
-                    <div class="wines__item-prices">
-                        <span class="wines__item-price">\u00A3${wine.bottle.toFixed(2)}</span> <span class="wines__item-price-label">bottle</span>
-                    </div>`;
-            } else if (wine.glass) {
-                pricesHtml = `
-                    <div class="wines__item-prices">
-                        <span class="wines__item-price">\u00A3${wine.glass.toFixed(2)}</span> <span class="wines__item-price-label">glass</span>
-                    </div>`;
+            let priceParts = [];
+
+            if (wine.glass) {
+                priceParts.push(`<div><span class="wines__item-price">\u00A3${wine.glass.toFixed(2)}</span></div>`);
+            }
+            if (wine.half) {
+                priceParts.push(`<div><span class="wines__item-price">\u00A3${wine.half.toFixed(2)}</span> <span class="wines__item-price-label">half</span></div>`);
+            }
+            if (wine.bottle) {
+                priceParts.push(`<div><span class="wines__item-price">\u00A3${wine.bottle.toFixed(2)}</span> <span class="wines__item-price-label">bottle</span></div>`);
+            }
+
+            if (priceParts.length > 0) {
+                pricesHtml = `<div class="wines__item-prices">${priceParts.join('')}</div>`;
             }
 
             itemsHtml += `
